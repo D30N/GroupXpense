@@ -1,0 +1,5 @@
+build/
+*.apk
+.gradle/
+local.properties
+manual-build.sh
