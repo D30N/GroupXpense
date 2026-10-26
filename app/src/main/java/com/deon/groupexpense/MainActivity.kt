@@ -116,6 +116,7 @@ class MainActivity : Activity() {
         setContentView(root)
         applyChrome()
         nav({ viewHome() }, clear = true)
+        UpdateCheck.autoCheck(this)
     }
 
     private fun applyChrome() {
@@ -2583,6 +2584,12 @@ class MainActivity : Activity() {
             }
         }
         dc.addView(ir)
+        dc.addView(hLine(this))
+        val ur = txt(this, "🔄  Check for updates", 15f, P.ink)
+        ur.setPadding(0, dp(13), 0, dp(13))
+        ur.isClickable = true
+        ur.setOnClickListener { UpdateCheck.check(this, manual = true) }
+        dc.addView(ur)
         col.addView(dc)
         col.addView(vSpace(this, 20))
 
