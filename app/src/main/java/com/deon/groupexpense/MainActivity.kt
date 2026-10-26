@@ -110,6 +110,7 @@ class MainActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        recordAnalytics()
         Store.init(this)
         P.apply(this, Store.mode, Store.accent)
         root = FrameLayout(this)
